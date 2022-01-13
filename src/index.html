@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>HEALTH RECORDS APP</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+     <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <h1 class="text-center">HEALTH RECORDS APP</h1>
+          <hr/>
+          <br/>
+        </div>
+      </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <img alt="140x140" data-src="holder.js/140x140" class="img-rounded img-center" style="width: 100%;" src="images/logo.png" data-holder-rendered="true">
+          <hr/>
+        </div>
+      </div>
+
+   
+
+    <div id="healthRecordsRow" class="row">
+        </div>
+    </div>
+
+    <div id="healthRecordsTemplate" style="display: none;">
+      <div class="col-sm-12 col-md-40 col-lg-40">
+        <div class="panel panel-default panel-doctor">
+          <div class="panel-heading">
+            <h3 class="panel-title">Scrappy</h3>
+          </div>
+          <div class="panel-body">
+            <strong>Medical Speciality</strong>: <span class="healthRecords-medicalSpeciality">Clinical Doctor</span><br/>
+             <hr/>
+            <button class="btn btn-primary btn-healthRecord" type="button" data-id="0">Add Doctor to health record</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

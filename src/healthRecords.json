@@ -1,0 +1,20 @@
+[
+  {
+    "id": 0,
+    "name": "Dr. asdf sdfq",
+    "medicalSpecialty": "Clinical Doctor"
+  },
+  {
+    "id": 1,
+    "name": "Dra. asdf sdfq",
+    "medicalSpecialty": "Dermatologist"
+  },
+
+  {
+    "id": 2,
+    "name": "Dr. asdsd sertq",
+    "medicalSpecialty": "Neurologist"
+  }
+
+  
+]
