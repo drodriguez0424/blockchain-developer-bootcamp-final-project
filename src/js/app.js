@@ -54,18 +54,18 @@ App = {
       // Set the provider for our contract
       App.contracts.HealthRecord.setProvider(App.web3Provider);
     
-      // Use our contract to retrieve and mark the adopted pets
-      return App.markAdopted();
+      // Use our contract to retrieve and mark the assign specialist
+      return App.addSpecialist();
     });
 
     return App.bindEvents();
   },
 
   bindEvents: function() {
-    $(document).on('click', '.btn-healthRecord', App.handleMark);
+    $(document).on('click', '.btn-healthRecord', App.handleAdd);
   },
 
-  markAdopted: function() {
+  addSpecialist: function() {
     var healthRecordInstance;
 
 App.contracts.HealthRecord.deployed().then(function(instance) {
@@ -75,7 +75,7 @@ App.contracts.HealthRecord.deployed().then(function(instance) {
 }).then(function(assignedDoctors) {
   for (i = 0; i < assignedDoctors.length; i++) {
     if (assignedDoctors[i] !== '0x0000000000000000000000000000000000000000') {
-      $('.panel-doctor').eq(i).find('button').text('Add').attr('disabled', true);
+      $('.panel-doctor').eq(i).find('button').text('Added Specialist').attr('disabled', true);
     }
   }
 }).catch(function(err) {
@@ -83,7 +83,7 @@ App.contracts.HealthRecord.deployed().then(function(instance) {
 });
   },
 
-  handleMark: function(event) {
+  handleAdd: function(event) {
     event.preventDefault();
 
     var doctorID = parseInt($(event.target).data('id'));
@@ -100,10 +100,10 @@ web3.eth.getAccounts(function(error, accounts) {
   App.contracts.HealthRecord.deployed().then(function(instance) {
     hrInstance = instance;
 
-    // Execute adopt as a transaction by sending account
+    // Execute add as a transaction by sending account
     return hrInstance.assigneDoctor(doctorID, {from: account});
   }).then(function(result) {
-    return App.markAdopted();
+    return App.addSpecialist();
   }).catch(function(err) {
     console.log(err.message);
   });
