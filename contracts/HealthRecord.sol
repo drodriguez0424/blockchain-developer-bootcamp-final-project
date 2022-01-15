@@ -105,12 +105,12 @@ contract HealthRecord is Ownable{
 	 /// @notice Add a doctor report with a tratment state.
 	 /// @param _treatment    Patient's name
 	 /// @param _medication   Patient's weight
-	 function addDoctorReport(string memory _treatment, string memory _medication, TreatmentStatus status )  public{
+	 function addDoctorReport(string memory _treatment, string memory _medication )  public{
 
 		doctorReports[reportsCount] = DoctorsReport({
 			doctor: msg.sender,
 			timestamp: block.timestamp,
-			treatmentStatus: status,
+			treatmentStatus: TreatmentStatus.Started,
 			treatment: _treatment,
 			medication: _medication
 		});
@@ -118,7 +118,7 @@ contract HealthRecord is Ownable{
 	 }
 
 	 /// @notice Return patient information
-		 function fetchPatient() public view 
+	 function fetchPatient() public view 
      returns (string memory fullName, uint256 weight,  string memory bloodType, string memory contact)
   { 
     fullName = patient.fullName; 
@@ -126,6 +126,17 @@ contract HealthRecord is Ownable{
     bloodType = patient.bloodType; 
     contact = patient.contact; 
     return (fullName, weight, bloodType, contact); 
+   } 
+
+    /// @notice Return a a doctor report
+	 function fetchReport(uint reportNumber) public view 
+     returns (address doctor, string memory treatment, string memory medication,  uint state)
+  { 
+	doctor= doctorReports[reportNumber].doctor;
+    treatment= doctorReports[reportNumber].treatment;
+	medication= doctorReports[reportNumber].medication;
+	state= uint(doctorReports[reportNumber].treatmentStatus);
+    return (doctor, treatment, medication, state); 
    } 
 
 	 function removeAsigneedDoctor(uint _doctorID) public{

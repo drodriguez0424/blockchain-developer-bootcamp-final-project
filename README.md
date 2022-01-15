@@ -1,7 +1,3 @@
-# blockchain-developer-bootcamp-final-project
-Proyecto final blockchain developer 
-
-
 # Final Project - HEALTH RECORDS
 
 ## Deployed version url:
@@ -26,7 +22,32 @@ https://healthrecords.netlify.app
  
 ### Running the Test Cases
 There are some test cases written in javascript. To execute them you must write de command truffle test
- 
+
+
+```
+Compiling your contracts...
+===========================
+> Compiling ./contracts/HealthRecord.sol
+> Artifacts written to /tmp/test--16693-4FEGCJQ8cQui
+> Compiled successfully using:
+   - solc: 0.8.0+commit.c7dfd78e.Emscripten.clang
+
+
+
+  Contract: HealthRecord
+    assign a doctor and retieving account addresses
+      ✓ can fetch the collection of all doctors assigned addresses (171ms)
+      ✓ should emit a LogForDoctorAssigned event when a doctor is added (1572ms)
+    patient Information
+      ✓ should update Patient Info (1287ms)
+      doctor Reports
+        ✓ should add doctor reports (1925ms)
+
+
+  4 passing (7s)
+
+```
+
 ### Deploy Frontend in the local environment
 
 1. Setup the blockhain network using ganache-cli
