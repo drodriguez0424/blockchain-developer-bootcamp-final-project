@@ -75,7 +75,7 @@ The truffe config file is set with this parameters for the development environme
 ```
 
 ## Screencast link
-
+https://www.loom.com/share/6788aa41e50e47fca7cd475aea70e905
 
 
 ## Project description
